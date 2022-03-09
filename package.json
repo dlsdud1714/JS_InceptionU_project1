@@ -1,0 +1,29 @@
+{
+  "name": "stayinshapegame",
+  "version": "1.0.0",
+  "description": "Choosing what to eat and how to lose carlories to meet the standard of daily calrorie intake.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlsdud1714/project1.git"
+  },
+  "keywords": [
+    "game",
+    "javascript",
+    "calrories",
+    "food",
+    "whatToEat"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dlsdud1714/project1/issues"
+  },
+  "homepage": "https://github.com/dlsdud1714/project1#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
