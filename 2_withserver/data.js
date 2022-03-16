@@ -6,19 +6,18 @@ const genderGoalCalorie= [2000, 2500];
 const setCPFratio = [0.5, 0.25, 0.25];
 
 //Breakfast
-class food{
-    constructor(name, carbCal, proteinCal, fatCal){
+function food(name, carbCal, proteinCal, fatCal){
         this.name = name;
         this.carbCal = carbCal;
         this.proteinCal = proteinCal;
         this.fatCal = fatCal;
-    }
+    
 }
 const popTarts = new food("2 pieces of Poptarts", 148, 44, 8);
 const toastEggBanana = new food("Toast, egg and banana", 178, 46, 76);
 const ramen =new food("Cheese Ramen",336, 160, 50);
 const cereal = new food("Frosted Flakes", 132, 8, 0);
-const breakfast = [popTarts.name, toastEggBanana.name, ramen.name, cereal.name];
+const breakfast = [popTarts, toastEggBanana, ramen, cereal];
 
 //brunch
 
@@ -105,7 +104,7 @@ function randomchoose(arrayName){
     let randomindex= Math.floor(Math.random()*(arrayName.length-1));
     return arrayName[randomindex];
 };
-module.exports={user, gen, genderGoalCalorie, setCPFratio};
+module.exports={user, gen, genderGoalCalorie, setCPFratio, breakfast};
 //start
 //get user info into user
 
