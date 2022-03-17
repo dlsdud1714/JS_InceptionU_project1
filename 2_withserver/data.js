@@ -1,9 +1,11 @@
 let readline = require('readline-sync')
+//just for breakfast page
+let setUser={name:"inyoung"}
 
 //daily recommanded
-const gen = ["Woman", "Man"];
-const genderGoalCalorie= [2000, 2500];
-const setCPFratio = [0.5, 0.25, 0.25];
+// const gen = ["Woman", "Man"];
+// const genderGoalCalorie= [2000, 2500];
+// const setCPFratio = [0.5, 0.25, 0.25];
 
 //Breakfast
 function food(name, carbCal, proteinCal, fatCal){
@@ -19,92 +21,92 @@ const ramen =new food("Cheese Ramen",336, 160, 50);
 const cereal = new food("Frosted Flakes", 132, 8, 0);
 const breakfast = [popTarts, toastEggBanana, ramen, cereal];
 
-//brunch
+// //brunch
 
-const frap = new food("Mocha Frappuccino", 143, 53, 35);
-const brunch = [frap.name, "Nah,I will skip it this time"];
+// const frap = new food("Mocha Frappuccino", 143, 53, 35);
+// const brunch = [frap.name, "Nah,I will skip it this time"];
 
-//lunch
-const pizzaPasta = new food("2 slices of pepperoni pizza and carbonara", 465, 217, 510);
-const burgerCoke = new food("Beyond meat burger and diet coke", 11, 80, 191);
-const riceBowl = new food("Bulgogi rice bowl", 171, 250, 183);
-const pho = new food("Beef Pho", 295, 255, 111);
-let lunch = [pizzaPasta.name, burgerCoke.name, riceBowl.name, pho.name];
+// //lunch
+// const pizzaPasta = new food("2 slices of pepperoni pizza and carbonara", 465, 217, 510);
+// const burgerCoke = new food("Beyond meat burger and diet coke", 11, 80, 191);
+// const riceBowl = new food("Bulgogi rice bowl", 171, 250, 183);
+// const pho = new food("Beef Pho", 295, 255, 111);
+// let lunch = [pizzaPasta.name, burgerCoke.name, riceBowl.name, pho.name];
 
-//snack
-const pretzel= new food("Mouth melting Pretzel", 382, 48, 31);
-const doritos = new food("Half bag of Doritos", 71, 8, 71);
-const cheeseCube = new food("Five cubes of cream cheese", 20, 39, 66);
-let snack = [pretzel.name, doritos.name, cheeseCube.name,"No eating"];
+// //snack
+// const pretzel= new food("Mouth melting Pretzel", 382, 48, 31);
+// const doritos = new food("Half bag of Doritos", 71, 8, 71);
+// const cheeseCube = new food("Five cubes of cream cheese", 20, 39, 66);
+// let snack = [pretzel.name, doritos.name, cheeseCube.name,"No eating"];
 
-//dinner
-const proteinShake = ("Chocolate protein Shake", 19, 115, 26);
-const potatoSteak = ("Steak with mashed potato", 124, 133, 320);
-const codRice = ("Cod cutlet and rice", 220, 113, 281);
-const sushiRoll = ("Unagi and Samon rolls and miso soup", 506, 108, 294);
-let dinner = [proteinShake.name, potatoSteak.name, codRice.name, sushiRoll.name, "random"];
+// //dinner
+// const proteinShake = ("Chocolate protein Shake", 19, 115, 26);
+// const potatoSteak = ("Steak with mashed potato", 124, 133, 320);
+// const codRice = ("Cod cutlet and rice", 220, 113, 281);
+// const sushiRoll = ("Unagi and Samon rolls and miso soup", 506, 108, 294);
+// let dinner = [proteinShake.name, potatoSteak.name, codRice.name, sushiRoll.name, "random"];
 
-//exercise
-let walk = -50;
-let gym = -100;
+// //exercise
+// let walk = -50;
+// let gym = -100;
 
 //inialization
 let carloriesAdded={carb:0, protein:0, fat:0, sumCalories:0, carbRatio:0, proteinRatio:0, fatRatio:0};
 
 
-//declaration
-let user = { name: "", gender: "", goalCalorie: "" };
-//let food = [breakfast, brunch, lunch, snack, dinner];
+// //declaration
+// let user = { name: "", gender: "", goalCalorie: "" };
+// //let food = [breakfast, brunch, lunch, snack, dinner];
 
 
-//functions
-function gainCalories(foodName){
-    carloriesAdded.carb +=foodName.carbCal;
-    carloriesAdded.protein +=foodName.proteinCal;
-    carloriesAdded.fat +=foodName.fatCal;
-    carloriesAdded.sumCalories = (carloriesAdded.carb+carloriesAdded.protein+carloriesAdded.fat);
-    carloriesAdded.carbRatio = (carloriesAdded.carb/carloriesAdded.sumCalories).toFixed(2);
-    carloriesAdded.proteinRatio = (carloriesAdded.protein/carloriesAdded.sumCalories).toFixed(2);
-    carloriesAdded.fatRatio = (carloriesAdded.fat/carloriesAdded.sumCalories).toFixed(2);
+// //functions
+// function gainCalories(foodName){
+//     carloriesAdded.carb +=foodName.carbCal;
+//     carloriesAdded.protein +=foodName.proteinCal;
+//     carloriesAdded.fat +=foodName.fatCal;
+//     carloriesAdded.sumCalories = (carloriesAdded.carb+carloriesAdded.protein+carloriesAdded.fat);
+//     carloriesAdded.carbRatio = (carloriesAdded.carb/carloriesAdded.sumCalories).toFixed(2);
+//     carloriesAdded.proteinRatio = (carloriesAdded.protein/carloriesAdded.sumCalories).toFixed(2);
+//     carloriesAdded.fatRatio = (carloriesAdded.fat/carloriesAdded.sumCalories).toFixed(2);
     
-    console.log("Your recommanded carories intake are ", user.goalCalorie, "cal.");
-    console.log(`Your goals of carbonate, protein, and fat ratios are ${setCPFratio}`);
-    console.log("Your daily calories intake so far is");
-    console.log(carloriesAdded);
-};
-function loseCalories(way){
-    let carbMinus = way*0.7;
-    let fatMinus = way*0.3;
+//     console.log("Your recommanded carories intake are ", user.goalCalorie, "cal.");
+//     console.log(`Your goals of carbonate, protein, and fat ratios are ${setCPFratio}`);
+//     console.log("Your daily calories intake so far is");
+//     console.log(carloriesAdded);
+// };
+// function loseCalories(way){
+//     let carbMinus = way*0.7;
+//     let fatMinus = way*0.3;
 
-    carloriesAdded.carb +=carbMinus;
-    carloriesAdded.fat +=fatMinus;
-    carloriesAdded.sumCalories = (carloriesAdded.carb+carloriesAdded.protein+carloriesAdded.fat);
-    carloriesAdded.carbRatio = (carloriesAdded.carb/carloriesAdded.sumCalories).toFixed(2);
-    carloriesAdded.proteinRatio = (carloriesAdded.protein/carloriesAdded.sumCalories).toFixed(2);
-    carloriesAdded.fatRatio = (carloriesAdded.fat/carloriesAdded.sumCalories).toFixed(2);
+//     carloriesAdded.carb +=carbMinus;
+//     carloriesAdded.fat +=fatMinus;
+//     carloriesAdded.sumCalories = (carloriesAdded.carb+carloriesAdded.protein+carloriesAdded.fat);
+//     carloriesAdded.carbRatio = (carloriesAdded.carb/carloriesAdded.sumCalories).toFixed(2);
+//     carloriesAdded.proteinRatio = (carloriesAdded.protein/carloriesAdded.sumCalories).toFixed(2);
+//     carloriesAdded.fatRatio = (carloriesAdded.fat/carloriesAdded.sumCalories).toFixed(2);
 
     
-    console.log("Your recommanded carories intake are ", user.goalCalorie, "cal.");
-    console.log(`Your goals of carbonate, protein, and fat ratios are ${setCPFratio}`);
+//     console.log("Your recommanded carories intake are ", user.goalCalorie, "cal.");
+//     console.log(`Your goals of carbonate, protein, and fat ratios are ${setCPFratio}`);
 
-    if (carloriesAdded.carb >0 && carloriesAdded.protein >0 && carloriesAdded.fat >0){
-        console.log("Your daily calorie intake so far is");
-        console.log(carloriesAdded);
-    }else{
-        console.log("Your daily calorie intake so far is");
-        console.log(carloriesAdded.carb);
-        console.log(carloriesAdded.protein);
-        console.log(carloriesAdded.fat);
-        console.warn("Your daily consumtion is much less than intake");
-    };
-    console.log("You lose calories!")
-};
+//     if (carloriesAdded.carb >0 && carloriesAdded.protein >0 && carloriesAdded.fat >0){
+//         console.log("Your daily calorie intake so far is");
+//         console.log(carloriesAdded);
+//     }else{
+//         console.log("Your daily calorie intake so far is");
+//         console.log(carloriesAdded.carb);
+//         console.log(carloriesAdded.protein);
+//         console.log(carloriesAdded.fat);
+//         console.warn("Your daily consumtion is much less than intake");
+//     };
+//     console.log("You lose calories!")
+// };
 
-function randomchoose(arrayName){
-    let randomindex= Math.floor(Math.random()*(arrayName.length-1));
-    return arrayName[randomindex];
-};
-module.exports={user, gen, genderGoalCalorie, setCPFratio, breakfast};
+// function randomchoose(arrayName){
+//     let randomindex= Math.floor(Math.random()*(arrayName.length-1));
+//     return arrayName[randomindex];
+// };
+module.exports={setUser, carloriesAdded, breakfast};
 //start
 //get user info into user
 

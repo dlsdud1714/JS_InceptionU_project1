@@ -1,5 +1,5 @@
 const {
-    user, gen, genderGoalCalorie, setCPFratio
+    user, gen, genderGoalCalorie, setCPFratio, setUser, carloriesAdded,breakfast
 }=require('./data.js');
 
 let express = require('express');
@@ -8,12 +8,16 @@ let app = express();
 const PORT = 2000;
 app.listen(PORT,()=> console.log(`Listening on port ${PORT}`));
 
-app.use(express.static('public'))
+app.use(express.static((__dirname, "public")));
 
-app.get('/project1',(req,res)=>{
-    const data = req.body;
-    res.json({data})
+app.get('/user',(req,res)=>{
+    res.status(200).json([setUser, carloriesAdded]);
+    
+});
+app.get('/breakfast', (req,res)=>{
+    res.status(200).json(breakfast);
 })
+
 
 // app.get('/userinfo/:name',(req,res)=>{
 //     let name = req.params.name;
