@@ -1,11 +1,12 @@
 let readline = require('readline-sync')
 //just for breakfast page
-let setUser={name:"inyoung"}
 
+let user = { Name: "", Gender: "", GoalCalorie: "" };
+let carloriesAdded={carb:0, protein:0, fat:0, sumCalories:0, totalCal:0, carbRatio:0, proteinRatio:0, fatRatio:0};
 //daily recommanded
-// const gen = ["Woman", "Man"];
-// const genderGoalCalorie= [2000, 2500];
-// const setCPFratio = [0.5, 0.25, 0.25];
+//const gen = ["Female", "Man"];
+const genderGoalCalorie= [2000, 2500];
+const setCPFratio = [0.5, 0.25, 0.25];
 
 //Breakfast
 function food(name, carbCal, proteinCal, fatCal){
@@ -13,8 +14,9 @@ function food(name, carbCal, proteinCal, fatCal){
         this.carbCal = carbCal;
         this.proteinCal = proteinCal;
         this.fatCal = fatCal;
-    
+        
 }
+
 const popTarts = new food("2 pieces of Poptarts", 148, 44, 8);
 const toastEggBanana = new food("Toast, egg and banana", 178, 46, 76);
 const ramen =new food("Cheese Ramen",336, 160, 50);
@@ -51,11 +53,10 @@ const breakfast = [popTarts, toastEggBanana, ramen, cereal];
 // let gym = -100;
 
 //inialization
-let carloriesAdded={carb:0, protein:0, fat:0, sumCalories:0, carbRatio:0, proteinRatio:0, fatRatio:0};
 
 
 // //declaration
-// let user = { name: "", gender: "", goalCalorie: "" };
+
 // //let food = [breakfast, brunch, lunch, snack, dinner];
 
 
@@ -106,7 +107,7 @@ let carloriesAdded={carb:0, protein:0, fat:0, sumCalories:0, carbRatio:0, protei
 //     let randomindex= Math.floor(Math.random()*(arrayName.length-1));
 //     return arrayName[randomindex];
 // };
-module.exports={setUser, carloriesAdded, breakfast};
+module.exports={ user, genderGoalCalorie, setCPFratio, carloriesAdded, breakfast};
 //start
 //get user info into user
 

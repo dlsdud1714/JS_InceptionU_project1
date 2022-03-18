@@ -1,23 +1,15 @@
-const {
-    user, gen, genderGoalCalorie, setCPFratio, setUser, carloriesAdded,breakfast
-}=require('./data.js');
 
 let express = require('express');
 let app = express();
+const bfInfo = require('./routes/bf');
+const start = require('./routes/UserInfo.js');
 
 const PORT = 2000;
 app.listen(PORT,()=> console.log(`Listening on port ${PORT}`));
 
-app.use(express.static((__dirname, "public")));
-
-app.get('/user',(req,res)=>{
-    res.status(200).json([setUser, carloriesAdded]);
-    
-});
-app.get('/breakfast', (req,res)=>{
-    res.status(200).json(breakfast);
-})
-
+app.use("/public", express.static((__dirname + "/public")));
+app.use("/insteadDb", bfInfo);
+app.use("/gamestart", start);
 
 // app.get('/userinfo/:name',(req,res)=>{
 //     let name = req.params.name;
