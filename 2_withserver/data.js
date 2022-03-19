@@ -2,9 +2,9 @@ let readline = require('readline-sync')
 //just for breakfast page
 
 let user = { Name: "", Gender: "", GoalCalorie: "" };
-let carloriesAdded={carb:0, protein:0, fat:0, sumCalories:0, totalCal:0, carbRatio:0, proteinRatio:0, fatRatio:0};
+let carloriesAdded={carb:0, protein:0, fat:0, sumCalories:0, carbRatio:0, proteinRatio:0, fatRatio:0};
 //daily recommanded
-//const gen = ["Female", "Man"];
+
 const genderGoalCalorie= [2000, 2500];
 const setCPFratio = [0.5, 0.25, 0.25];
 

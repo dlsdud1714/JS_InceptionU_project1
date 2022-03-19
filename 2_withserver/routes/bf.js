@@ -6,11 +6,11 @@ const {
 
 
 router.get('/user',(req,res)=>{
-    res.status(200).json( carloriesAdded);
+    res.status(200).json(carloriesAdded);
     
 });
 
-router.get('/breakfast', (req,res)=>{
+router.get('/list', (req,res)=>{
     res.status(200).json(breakfast);
 })
 
