@@ -15,7 +15,7 @@ function food(name, carbCal, proteinCal, fatCal){
         this.proteinCal = proteinCal;
         this.fatCal = fatCal;
         
-}
+};
 
 const popTarts = new food("2 pieces of Poptarts", 148, 44, 8);
 const toastEggBanana = new food("Toast, egg and banana", 178, 46, 76);
@@ -23,18 +23,34 @@ const ramen =new food("Cheese Ramen",336, 160, 50);
 const cereal = new food("Frosted Flakes", 132, 8, 0);
 const breakfast = [popTarts, toastEggBanana, ramen, cereal];
 
-// //brunch
+//exercise
+function exercise(name, loseCal){
+        this.name = name;
+        this.loseCal = loseCal;
+}
 
-// const frap = new food("Mocha Frappuccino", 143, 53, 35);
-// const brunch = [frap.name, "Nah,I will skip it this time"];
+const car = new exercise('car', 0);
+const walk = new exercise('walk', -50);
+const commutingOptions = [car, walk];
 
-// //lunch
-// const pizzaPasta = new food("2 slices of pepperoni pizza and carbonara", 465, 217, 510);
-// const burgerCoke = new food("Beyond meat burger and diet coke", 11, 80, 191);
-// const riceBowl = new food("Bulgogi rice bowl", 171, 250, 183);
-// const pho = new food("Beef Pho", 295, 255, 111);
-// let lunch = [pizzaPasta.name, burgerCoke.name, riceBowl.name, pho.name];
+// let gym = -100;
 
+
+//starbucks
+
+const frap = new food("Mocha Frappuccino", 143, 53, 35);
+const noDrick = new food("Skip Starbucks", 0,0,0);
+const starbucks = [frap, noDrick];
+//
+
+//lunch
+const pizzaPasta = new food("2 slices of pepperoni pizza and carbonara", 465, 217, 510);
+const burgerCoke = new food("Beyond meat burger and diet coke", 11, 80, 191);
+const riceBowl = new food("Bulgogi rice bowl", 171, 250, 183);
+const pho = new food("Beef Pho", 295, 255, 111);
+let lunch = [pizzaPasta, burgerCoke, riceBowl, pho];
+
+module.exports={ user, genderGoalCalorie, setCPFratio, carloriesAdded, breakfast, commutingOptions, starbucks, lunch};
 // //snack
 // const pretzel= new food("Mouth melting Pretzel", 382, 48, 31);
 // const doritos = new food("Half bag of Doritos", 71, 8, 71);
@@ -48,9 +64,7 @@ const breakfast = [popTarts, toastEggBanana, ramen, cereal];
 // const sushiRoll = ("Unagi and Samon rolls and miso soup", 506, 108, 294);
 // let dinner = [proteinShake.name, potatoSteak.name, codRice.name, sushiRoll.name, "random"];
 
-// //exercise
-// let walk = -50;
-// let gym = -100;
+
 
 //inialization
 
@@ -107,7 +121,7 @@ const breakfast = [popTarts, toastEggBanana, ramen, cereal];
 //     let randomindex= Math.floor(Math.random()*(arrayName.length-1));
 //     return arrayName[randomindex];
 // };
-module.exports={ user, genderGoalCalorie, setCPFratio, carloriesAdded, breakfast};
+
 //start
 //get user info into user
 

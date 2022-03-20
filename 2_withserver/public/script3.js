@@ -3,7 +3,7 @@
 //later instead of get to api use Mongodb
 const userApi = '/breakfast/user';
 const userSetting = '/gamestart/storedUser';
-const listApi = '/howToGo/list';
+const listApi = '/starbucks/list';
 
 async function getData(api){
     const response = await fetch(api);
@@ -12,7 +12,6 @@ async function getData(api){
 }
 
 //put User info
-
 async function putUserSetting(){
     
     const UserData = await getData(userSetting);
@@ -21,11 +20,11 @@ async function putUserSetting(){
             console.log(UserData)
             getID.innerHTML= `<p>${UserData.Name}, Your set Calrorie intake is <b>${UserData.GoalCalorie}cal</b>.</p><p>Try to manage Calorie ratios to </p><p> carbonate: <b>${UserData.CarbonateRatio}</b></p><p> Protein: <b>${UserData.ProteinRatio}</b></p><p> Fat: <b>${UserData.FatRatio}<b></p>`
     }catch{console.log}
-    //Put number in dashboard
-    };
+};
+
 putUserSetting()
 
-//put userinfo and breakfast
+//put userinfo
 putUserHTML()
 
 async function putUserHTML(){
@@ -44,10 +43,10 @@ async function putUserHTML(){
 
     }catch{console.log}
 };
-//------------------HowToGo--------------------------------------------------------------
+//------------------starbucks--------------------------------------------------------------
 //make list
 //only getData API was changed. and tag waylist and class=list
-const container = document.querySelector('.waylist'); //ul
+const container = document.querySelector('.dricklist'); //ul
 putMealList()
 
 async function putMealList(){
@@ -72,23 +71,26 @@ async function onTextMouse(event, element){
     try{
         if(event.target.dataset.key !== '2'){
             return;
-        };
+    };
         for(let element of dataArray){
             let nameValue = event.target.innerText;
             if(nameValue == element.name ){
-                let ChosenBreakfastArray = element;
-                let createdCalInfo = createCalBoardHTML(dataArray ,ChosenBreakfastArray);
+                let ChosenArray = element;
+                let createdCalInfo = createCalBoardHTMLStarbucks(ChosenArray);
                 const address = document.getElementById('caloriesinfo')
                 address.innerHTML = createdCalInfo;
             }
-    }
-}catch{console.log}
+        }
+    }catch{console.log}
 };
 //changes: return string, class, id removed
-function createCalBoardHTML(array, item){
-        const comment = ["I will go to work by car", "I am already late. I don't care what my boss will say!"];
-        let index = array.indexOf(item);
-        return `<p class="acc">${comment[index]}`;
-    
+function createCalBoardHTMLStarbucks(item){
+
+    if(item.carbCal===0 && item.proteinCal===0 && item.fatCal ===0){
+        const comment = "I don't drink coffee.";
+        return `<p class="acc">${comment}`;
+    }else{
+        return `<p id='cpf0'>Carbonate: ${item.carbCal}kal</p></br><p id='cpf1'>Protein: ${item.proteinCal}kal</p></br><p id='cpf2'>Fat: ${item.fatCal}kal</p></br>`;
+    }
 };
 

@@ -64,7 +64,7 @@ function createBreakfastHTML(item,index){
 //update by handling click event
 
 
-container.addEventListener('click', event => onBoxClick(event, breakfastApi));
+//container.addEventListener('click', event => onBoxClick(event, breakfastApi));
 container.addEventListener('mousemove', event => onTextMouse(event, breakfastApi));
 
 
@@ -127,20 +127,3 @@ async function onBoxClick(event, element){
 
 
 
-//Update into server
-
-   
-// // function gainCalories(foodName){
-// //     carloriesAdded.carb +=foodName.carbCal;
-// //     carloriesAdded.protein +=foodName.proteinCal;
-// //     carloriesAdded.fat +=foodName.fatCal;
-// //     carloriesAdded.sumCalories = (carloriesAdded.carb+carloriesAdded.protein+carloriesAdded.fat);
-// //     carloriesAdded.carbRatio = (carloriesAdded.carb/carloriesAdded.sumCalories).toFixed(2);
-// //     carloriesAdded.proteinRatio = (carloriesAdded.protein/carloriesAdded.sumCalories).toFixed(2);
-// //     carloriesAdded.fatRatio = (carloriesAdded.fat/carloriesAdded.sumCalories).toFixed(2);
-    
-// //     console.log("Your recommanded carories intake are ", user.goalCalorie, "cal.");
-// //     console.log(`Your goals of carbonate, protein, and fat ratios are ${setCPFratio}`);
-// //     console.log("Your daily calories intake so far is");
-// //     console.log(carloriesAdded);
-// // }
