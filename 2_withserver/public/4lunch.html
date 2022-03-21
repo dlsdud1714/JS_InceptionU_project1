@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stay In Shape</title>
-    <script src='public/script2.js' defer></script>
+    <script src='/public/script40.js' defer></script>
 </head>
 <body>
     <h1>InceptionU Project1</h1>
@@ -15,8 +15,8 @@
     <div id="goal"></div>
     
     <p id="UserInfo"></p>
-    <ul class="InfoText" >
     <label>Your daily calories intake so far is</label>
+    <ul class="InfoText" >
         <li id="e0">Carbonate intake: </li>
         <li id="e1">Protein intake: </li>
         <li id="e2">Fat intake: </li>
@@ -26,11 +26,13 @@
         <li id="e6">Fat Ratio: </li>
     </ul>
     
-    <form action="/starbucks" method="GET">
-        <label>Time to go to work! How would you like to go?? Hurry up! you don't have much of time.</label>  
-        <ul class="waylist">
+    <form action="/lunch" method="GET">
+        <ul class="lunchlist">
+            <lable for="YN">You went to work. Finally, it's lunch time!! Your co-worker wants to buy you lunch. Do you want to come along?</lable>
+            <li data-key="2"><input name="options" value='sublist0' id='sublist0' type="radio" />Yes</li>
+            <li data-key="2"><input name="options" value='sublist1' id='sublist0' type="radio" />No</li>
         </ul>
-         <input type="submit" value="Go to Starbucks"/>
+         <input type="submit" value="Go for lunch"/>
     
     </form>
 

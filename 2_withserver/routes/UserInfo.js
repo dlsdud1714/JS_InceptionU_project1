@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { user, genderGoalCalorie, setCPFratio } = require('../data.js');
 
-const { route } = require('./bf.js');
+const { route } = require('./breakfast.js');
 
 router.get('/storedUser',(req,res)=>{
     res.json(user)

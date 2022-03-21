@@ -13,6 +13,7 @@ function getURL(){
     
      const urlParams = new URLSearchParams(window.location.search);
      urlParams.forEach((value, name)=> {
+         
          setUser.append(`${name}: ${value}`);
          setUser.append(document.createElement('br'))
         });
@@ -64,24 +65,3 @@ async function displayArray(){
 };
 
 displayArray()
-
-//save user info array
-//async function store(){
-   // const storedUserData = await finishInfo();
-    // const option = {
-    //     method: 'POST',
-    //     headers: {
-    //         "content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify(storedUserData)
-    // };
-    //console.log(storedUserData)
-    //const response = await fetch(`/gamestart/storedUser2.html?name=${storedUserData.Name}&gender=${storedUserData.Gender}`);
-    //console.log(response)
-    //const json = response.json();
-//}
-//const submitBtn = document.getElementById('btn');
-
-// submitBtn.addEventListener('click', onClick())
-// console.log(submitBtn)
-

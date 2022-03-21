@@ -33,72 +33,51 @@ const car = new exercise('car', 0);
 const walk = new exercise('walk', -50);
 const commutingOptions = [car, walk];
 
-// let gym = -100;
-
 
 //starbucks
-
 const frap = new food("Mocha Frappuccino", 143, 53, 35);
 const noDrick = new food("Skip Starbucks", 0,0,0);
 const starbucks = [frap, noDrick];
-//
+
 
 //lunch
 const pizzaPasta = new food("2 slices of pepperoni pizza and carbonara", 465, 217, 510);
 const burgerCoke = new food("Beyond meat burger and diet coke", 11, 80, 191);
 const riceBowl = new food("Bulgogi rice bowl", 171, 250, 183);
 const pho = new food("Beef Pho", 295, 255, 111);
-let lunch = [pizzaPasta, burgerCoke, riceBowl, pho];
+const lunch = [pizzaPasta, burgerCoke, riceBowl, pho];
 
-module.exports={ user, genderGoalCalorie, setCPFratio, carloriesAdded, breakfast, commutingOptions, starbucks, lunch};
-// //snack
-// const pretzel= new food("Mouth melting Pretzel", 382, 48, 31);
-// const doritos = new food("Half bag of Doritos", 71, 8, 71);
-// const cheeseCube = new food("Five cubes of cream cheese", 20, 39, 66);
-// let snack = [pretzel.name, doritos.name, cheeseCube.name,"No eating"];
+//snack
+const pretzel= new food("Mouth watering Pretzel", 382, 48, 31);
+const doritos = new food("Half bag of Doritos", 71, 8, 71);
+const cheeseCube = new food("Five cubes of laughing cow cheese", 20, 39, 66);
+const noEat = new food("Not eating", 0,0,0);
+const snack = [pretzel, doritos, cheeseCube,noEat];
 
-// //dinner
-// const proteinShake = ("Chocolate protein Shake", 19, 115, 26);
-// const potatoSteak = ("Steak with mashed potato", 124, 133, 320);
-// const codRice = ("Cod cutlet and rice", 220, 113, 281);
-// const sushiRoll = ("Unagi and Samon rolls and miso soup", 506, 108, 294);
-// let dinner = [proteinShake.name, potatoSteak.name, codRice.name, sushiRoll.name, "random"];
+//gym
+const goGym = new exercise('Going gym', -80);
+const noGym = new exercise('Going home', 0);
+const gymOptions = [goGym, noGym];
+
+//dinner
+const proteinShake = new food("Chocolate protein Shake", 19, 115, 26);
+const potatoSteak = new food("Steak with mashed potato", 124, 133, 320);
+const codRice = new food("Cod cutlet and rice", 220, 113, 281);
+const sushiRoll = new food("Unagi and Samon rolls and miso soup", 506, 108, 294);
+const random = new food("Random");
+let dinner = [proteinShake, potatoSteak, codRice, sushiRoll, random];
+
+module.exports={ user, genderGoalCalorie, setCPFratio, carloriesAdded, breakfast, commutingOptions, starbucks, lunch, snack, gymOptions, dinner};
 
 
 
-//inialization
 
-
-// //declaration
-
-// //let food = [breakfast, brunch, lunch, snack, dinner];
-
-
-// //functions
-// function gainCalories(foodName){
-//     carloriesAdded.carb +=foodName.carbCal;
-//     carloriesAdded.protein +=foodName.proteinCal;
-//     carloriesAdded.fat +=foodName.fatCal;
-//     carloriesAdded.sumCalories = (carloriesAdded.carb+carloriesAdded.protein+carloriesAdded.fat);
-//     carloriesAdded.carbRatio = (carloriesAdded.carb/carloriesAdded.sumCalories).toFixed(2);
-//     carloriesAdded.proteinRatio = (carloriesAdded.protein/carloriesAdded.sumCalories).toFixed(2);
-//     carloriesAdded.fatRatio = (carloriesAdded.fat/carloriesAdded.sumCalories).toFixed(2);
-    
+ 
 //     console.log("Your recommanded carories intake are ", user.goalCalorie, "cal.");
 //     console.log(`Your goals of carbonate, protein, and fat ratios are ${setCPFratio}`);
 //     console.log("Your daily calories intake so far is");
 //     console.log(carloriesAdded);
 // };
-// function loseCalories(way){
-//     let carbMinus = way*0.7;
-//     let fatMinus = way*0.3;
-
-//     carloriesAdded.carb +=carbMinus;
-//     carloriesAdded.fat +=fatMinus;
-//     carloriesAdded.sumCalories = (carloriesAdded.carb+carloriesAdded.protein+carloriesAdded.fat);
-//     carloriesAdded.carbRatio = (carloriesAdded.carb/carloriesAdded.sumCalories).toFixed(2);
-//     carloriesAdded.proteinRatio = (carloriesAdded.protein/carloriesAdded.sumCalories).toFixed(2);
-//     carloriesAdded.fatRatio = (carloriesAdded.fat/carloriesAdded.sumCalories).toFixed(2);
 
     
 //     console.log("Your recommanded carories intake are ", user.goalCalorie, "cal.");
