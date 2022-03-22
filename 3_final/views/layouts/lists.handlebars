@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stay In Shape</title>
+    <h1>InceptionU Project1</h1>
+    <h2>Stay In Shape</h2>
+    
+</head>
+<body>
+    <h3 id="welcomeMsc">Welcome to "Stay In Shape" game!</h3>
+
+<div id="info">
+
+<p>Hello, {{this.Name}}</p>
+</br>
+<p>You have chosen gender: {{this.Gender}}</p>
+<p>Your recommanded total calories intake is <b>{{this.GoalCalorie}}</b></p>
+<p>Also, try to keep the ratios:</p>
+<p>Carbonate Ratio: {{this.CalRatio}}</p>
+<p>Protein Ratio: {{this.ProteinRatio}}</p>
+<p>Fat Ratio: {{this.fatRatio}}</p>
+</div>
+
+    <p id="UserInfo"></p>
+    <ul class="InfoText" >
+        <label>Your daily calories intake so far is</label>
+        <li id="e0">Carbonate intake: {{this.carb}} cal</li>
+        <li id="e1">Protein intake: {{this.protein}} cal</li>
+        <li id="e2">Fat intake: {{this.fat}} cal</li>
+        <li id="e3">Total intake: {{this.sumCalories}} cal</li>
+        <li id="e4">Carbonate Ratio: {{this.carbRatio}}</li>
+        <li id="e5">Protein Ratio: {{this.proteinRatio}}</li>
+        <li id="e6">Fat Ratio: {{this.fatRatio}}</li>
+    </ul>
+    
+    {{{body}}}
+        
+    
+
+</body>
+</html>

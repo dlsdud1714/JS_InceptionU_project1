@@ -1,0 +1,17 @@
+
+   
+    <form action="/dinner/lists" method="GET">
+        <label>Your energy filled up!! Are you going to gym?</label>
+        <ul>
+        {{#each gymOptions}}
+         <li>
+              <input type=radio name='options' value='{{this.name}}'/><span>{{this.name}}</span></br>
+         <small> {{this.comment}}</small></span>
+         </li>
+         {{/each}}
+        </ul>   
+         <input type="submit"  value="Go to gym"/>
+
+    </form>
+
+  

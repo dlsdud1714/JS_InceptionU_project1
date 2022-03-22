@@ -1,0 +1,17 @@
+
+   
+    <form action="/starbucks/lists" method="GET">
+        <label>Time to go to work! How would you like to go?? Hurry up! you don't have much of time.</label>
+        <ul>
+        {{#each commutingOptions}}
+         <li>
+             <input type=radio name='options' value='{{this.name}}'/><span>{{this.name}}</span></br>
+         <small> {{this.comment}}</small></span>
+         </li>
+         {{/each}}
+        </ul>   
+         <input type="submit"  value="Go to Starbucks"/>
+
+    </form>
+
+  

@@ -1,0 +1,17 @@
+
+   
+    <form action="/result" method="GET">
+        <label>Your family has been dying to wait for you. Have dinner with family.</label>
+        <ul>
+        {{#each dinner}}
+         <li>
+             <input type=radio name='options' value='{{this.name}}'/><span>{{this.name}}</span></br>
+         <small> Carbonate: {{this.carbCal}}, Protein: {{this.proteinCal}}, Fat: {{this.fatCal}}</br></dd></small></span>
+         </li>
+         {{/each}}
+        </ul>   
+         <input type="submit"  value="Result"/>
+
+    </form>
+
+  

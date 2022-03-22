@@ -5,7 +5,7 @@
   "main": "data.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "auto": "nodemon ./2_withserver/server.js"
+    "auto": "nodemon ./3_final/server.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,11 @@
   },
   "homepage": "https://github.com/dlsdud1714/project1#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.6",
     "express": "^4.17.3",
+    "express-ejs-layouts": "^2.5.1",
+    "express-handlebars": "^6.0.3",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 
-const express = require('express');
-const app = express();
+//const express = require('express');
+//const app = express();
 
 const start = require('./routes/UserInfo.js');
 const bfInfo = require('./routes/breakfast');
@@ -15,7 +15,7 @@ const { breakfast, commutingOptions, starbucks, lunch, snack, gymOptions, dinner
 const { setUserCPF, findOneFromList, calorieCal, totalToCPF, randomchoice }  = require('./functions')
 
 const PORT = 2000;
-app.listen(PORT,()=> console.log(`Listening on port ${PORT}`));
+//app.listen(PORT,()=> console.log(`Listening on port ${PORT}`));
 
 
 app.use("/public", express.static((__dirname + "/public")));

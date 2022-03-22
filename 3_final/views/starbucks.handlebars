@@ -1,0 +1,17 @@
+
+   
+    <form action="/lunch/YN" method="GET">
+        <label>You found a Starbucks on the way. You must need coffee to keep you awake!</label>
+        <ul>
+        {{#each starbucks}}
+         <li>
+             <input type=radio name='options' value='{{this.name}}'/><span>{{this.name}}</span></br>
+         <small> Carbonate: {{this.carbCal}}, Protein: {{this.proteinCal}}, Fat: {{this.fatCal}}</br></dd></small></span>
+         </li>
+         {{/each}}
+        </ul>   
+         <input type="submit"  value="Go to work"/>
+
+    </form>
+
+  

@@ -16,7 +16,7 @@ async function putUserSetting(){
     try{
             const getID = document.getElementById(`goal`)
             console.log(UserData)
-            getID.innerHTML= `<p>${UserData.Name}, Your set Calrorie intake is <b>${UserData.GoalCalorie}cal</b>.</p><p>Try to manage Calorie ratios to </p><p> carbonate: <b>${UserData.CarbonateRatio}</b></p><p> Protein: <b>${UserData.ProteinRatio}</b></p><p> Fat: <b>${UserData.FatRatio}<b></p>`
+            getID.innerHTML= `<p>${UserData.Name}, Your set Calrories intake is <b>${UserData.GoalCalorie}cal</b>.</p><p>Try to manage Calorie ratios to meet</p><p> carbonate: <b>${UserData.CarbonateRatio}</b></p><p> Protein: <b>${UserData.ProteinRatio}</b></p><p> Fat: <b>${UserData.FatRatio}<b></p>`
     }catch{console.log}
 };
 
