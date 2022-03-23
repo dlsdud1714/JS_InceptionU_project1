@@ -8,8 +8,9 @@
             <input type=radio name='options' value='no'/><span>No</span>
            
         </ul> 
-         <input type="submit"  value="Go for lunch"/>
-
+        {{#each userData}}
+         <button type="submit" name="name" value="{{this.Name}}">Go for lunch</button>
+        {{/each}}
     </form>
 
   

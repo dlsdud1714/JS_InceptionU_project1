@@ -10,8 +10,9 @@
          </li>
          {{/each}}
         </ul>   
-         <input type="submit"  value="Go to Starbucks"/>
-
+        {{#each userData}}
+         <button type="submit" name="name" value="{{this.Name}}">Go to Starbucks</button>
+            {{/each}}
     </form>
 
   

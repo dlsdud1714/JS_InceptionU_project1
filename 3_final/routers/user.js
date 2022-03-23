@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-let { setCPFratio, member }= require('../data')
+let { createUserInfo} =require('../functions')
 
 router.get('/login',(req,res)=>{
     res.render('login', {layout: false})
@@ -8,28 +8,21 @@ router.get('/login',(req,res)=>{
 
 
 //User set up
-router.post('/login',(req,res)=>{
-member ={
+router.post('/login',async (req,res)=>{
+let member ={
      Name: req.body.name,
      Gender: req.body.gender
  };
-
- //Set calories goal
-const genderGoalCalorie= [2000, 2500];
-if(member.Gender == "female"){
-    member.GoalCalorie = genderGoalCalorie[0];
-}else if(member.Gender == "male"){
-    member.GoalCalorie = genderGoalCalorie[1];
-};
-//users.push(member);
-//console.log("Users: ",users);
+ 
+ //for rendering
+ //add goalcalories + CPFratio and create data in db
+const newUser = await createUserInfo(member)
 const layout = {layout: false};
-const concatInfoObj = {...layout, ...member, ...setCPFratio}
-
+const concatInfoObj = {...layout,...newUser}
+console.log(concatInfoObj)
 res.render('loginInfo', concatInfoObj)
+
 });
-
-
 
 
 

@@ -15,20 +15,21 @@
 <div id="goal"></div>
 
 <div id="info">
-
+<form action="/breakfast/lists" method="GET">
 <p>Hello, {{this.Name}}</p>
 </br>
 <p>You have chosen gender: {{this.Gender}}</p>
-<p>Your recommanded total calories intake is <b>{{this.GoalCalorie}}</b></p>
+<p>Your recommanded total calories intake is <b>{{this.GoalCalorie}}kcal</b></p>
 <p>Also, try to keep the ratios:</p>
 <p>Carbonate Ratio: {{this.CalRatio}}</p>
 <p>Protein Ratio: {{this.ProteinRatio}}</p>
-<p>Fat Ratio: {{this.fatRatio}}</p>
+<p>Fat Ratio: {{this.FatRatio}}</p>
 
 </div>
 
 
-<button id="btn" onClick="location.href='/breakfast/lists'">Game start!</button>
+<button type="submit" name="name" value="{{this.Name}}">Game start!</button>
+</form>
 
 </body>
 </html>

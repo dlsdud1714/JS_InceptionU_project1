@@ -6,12 +6,13 @@
         {{#each snack}}
          <li>
              <input type=radio name='options' value='{{this.name}}'/><span>{{this.name}}</span></br>
-         <small> Carbonate: {{this.carbCal}}, Protein: {{this.proteinCal}}, Fat: {{this.fatCal}}</br></dd></small></span>
+         <small> Carbonate: {{this.carbCal}}kcal, Protein: {{this.proteinCal}}kcal, Fat: {{this.fatCal}}kcal</br></small></span>
          </li>
          {{/each}}
         </ul>   
-         <input type="submit"  value="Go to gym"/>
-
+        {{#each userData}}
+         <button type="submit" name="name" value="{{this.Name}}">Go to gym</button>
+        {{/each}}
     </form>
 
   

@@ -1,10 +1,10 @@
 
-
+const {createUser, findUser, updateUser, createFoodLists, findFoodLists, createExerciseLists, findExerciseLists}=require('./model/game.js')
 //let users = [];
 let member= { Name: "", Gender: "", GoalCalorie: "" };
 let carloriesAdded={carb:0, protein:0, fat:0, sumCalories:0, carbRatio:0, proteinRatio:0, fatRatio:0};
 //daily recommanded
-const setCPFratio = {CalRatio:0.5, ProteinRatio:0.25, FatRatio:0.25};
+//const setCPFratio = {CalRatio:0.5, ProteinRatio:0.25, FatRatio:0.25};
 
 //Breakfast
 function food(name, carbCal, proteinCal, fatCal){
@@ -15,12 +15,12 @@ function food(name, carbCal, proteinCal, fatCal){
         
 };
 const random = new food("Random");
-
 const popTarts = new food("2 pieces of Poptarts", 148, 44, 8);
 const toastEggBanana = new food("Toast, egg and banana", 178, 46, 76);
 const ramen =new food("Cheese Ramen",336, 160, 50);
 const cereal = new food("Frosted Flakes", 132, 8, 0);
-const breakfast = [popTarts, toastEggBanana, ramen, cereal, random];
+let breakfast = [popTarts, toastEggBanana, ramen, cereal, random];
+
 
 //exercise
 function exercise(name, loseCal, comment){
@@ -38,6 +38,7 @@ const commutingOptions = [car, walk];
 const frap = new food("Mocha Frappuccino", 143, 53, 35);
 const noDrick = new food("Skip Starbucks", 0,0,0);
 const starbucks = [frap, noDrick, random];
+
 
 
 //lunch
@@ -67,5 +68,11 @@ const sushiRoll = new food("Unagi and Samon rolls and miso soup", 506, 108, 294)
 
 const dinner = [proteinShake, potatoSteak, codRice, sushiRoll, random];
 
-module.exports={ member, setCPFratio, carloriesAdded, breakfast, commutingOptions, starbucks, lunch, snack, gymOptions, dinner};
+// //to updata data to database
+// commutingOptions.map(list=>{
+//         list = {...{forWhat: "howToGo"},...list};
+        
+//         createExerciseLists(list)
+// })
+module.exports={ member, carloriesAdded, breakfast, commutingOptions, starbucks, lunch, snack, gymOptions, dinner};
 

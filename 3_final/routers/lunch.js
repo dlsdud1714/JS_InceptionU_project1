@@ -18,14 +18,13 @@ router.get('/YN',(req,res)=>{
 });
 
 router.get('/lists',(req,res)=>{
+    const optionsArray={lunch: lunch};
+    const concatCarAdded = {...carloriesAdded,...optionsArray};
+
     if(req.query.options==='no'){
-        res.render('lunchNo', {layout: false});
-
+        res.send("<script>alert('You forgot to bring your lunch box and your wallet.. No choice. Find and join any group for lunch'); location.href = '/lunch/lists?options=yes'</script>") 
     }else if(req.query.options==="yes"){
-        const optionsArray={lunch: lunch};
-        const concatCarAdded = {...carloriesAdded,...optionsArray};
          res.render('lunch', concatCarAdded); 
-
     }
 });
 

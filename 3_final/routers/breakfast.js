@@ -1,12 +1,21 @@
 const express = require('express');
 const router= express.Router();
-let {breakfast, carloriesAdded, member, setCPFratio} =require('../data')
 
-router.get('/lists',(req,res)=>{
- const breakfastArray={breakfast: breakfast}
- const concatCarAddedBreakFast = {...member,...setCPFratio,...carloriesAdded,...breakfastArray}
- console.log(concatCarAddedBreakFast)
-    res.render("breakfast", concatCarAddedBreakFast);
+const { bringUserdata, bringListdata} = require('../functions');
+
+router.get('/lists', async (req,res)=>{
+//bring User data
+    const name = req.query.name;
+    const userData = await bringUserdata(name);
+    const userObject= {userData: userData};
+    
+//bring breakfastdata
+    const breakfastListArray  = await bringListdata('breakfast');
+    const breakfastObject={ breakfast: breakfastListArray};
+    const concatCarAddedBreakFast = {...userObject,...breakfastObject};
+    res.render("breakfast", {...concatCarAddedBreakFast});
+
+  
 })
 
 module.exports=router
