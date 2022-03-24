@@ -68,9 +68,9 @@ const sushiRoll = new food("Unagi and Samon rolls and miso soup", 506, 108, 294)
 
 const dinner = [proteinShake, potatoSteak, codRice, sushiRoll, random];
 
-// //to updata data to database
-// commutingOptions.map(list=>{
-//         list = {...{forWhat: "howToGo"},...list};
+//to updata data to database
+// gymOptions.map(list=>{
+//         list = {...{forWhat: "gym"},...list};
         
 //         createExerciseLists(list)
 // })

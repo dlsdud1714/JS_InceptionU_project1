@@ -3,8 +3,8 @@
     <form action="/howToGo/lists" method="GET">
         <label>"You woke up late!! Eat breakfast fast. Choose one!"</label>
         <ul>
-        <li>
             
+        <li>
         {{#each breakfast}}
         <input type=radio name='options' value='{{this.name}}'/><span>{{this.name}}</span></br>
          <small> Carbonate: {{this.carbCal}}kcal, Protein: {{this.proteinCal}}kcal, Fat: {{this.fatCal}}kcal</br></small></span>

@@ -1,21 +1,22 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const {lunch, carloriesAdded, snack} =require('../data')
-const{ findOneFromList, randomchoice, calorieCal }=require('../functions')
+const { updatedUserData, bringListdata } = require("../functions");
 
-router.get('/lists',(req,res)=>{
-    
-     //update userdata
-    findOneFromList(req ,lunch)
-    .then(chosen=>randomchoice(chosen,lunch))
-    .then(chosen=>calorieCal(chosen))
-    .then(()=>{
-        const optionsArray={snack: snack};
-        const concatCarAdded = {...carloriesAdded,...optionsArray};
-         res.render('snack', concatCarAdded); 
+router.get("/lists", async (req, res) => {
+  //bring previous list data
+  const chosen = req.query.options;
+  const name = req.query.name;
 
-    })
-})
+  //bring updated userdata
+  const updatedinfo = await updatedUserData(chosen, name, "lunch");
+  const userObj = { userData: updatedinfo };
 
+  //bring list
+  const optionsArray = await bringListdata("snack");
+  const optionsObj = { snack: optionsArray };
 
-module.exports=router;
+  const concatUserAndList = { ...userObj, ...optionsObj };
+  res.render("snack", concatUserAndList);
+});
+
+module.exports = router;

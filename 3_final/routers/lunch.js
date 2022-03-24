@@ -1,32 +1,43 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const {starbucks, carloriesAdded, lunch} =require('../data')
-const{ findOneFromList, calorieCal, randomchoice}=require('../functions')
+const {
+  updatedUserData,
+  bringListdata,
+  bringUserdata,
+} = require("../functions");
 
-router.get('/YN',(req,res)=>{
-    
-     //update userdata
-    findOneFromList(req ,starbucks)
-    .then(chosen=>randomchoice(chosen, starbucks))
-    .then(chosen=>calorieCal(chosen))
-    .then(()=>{
-        const optionsArray={lunch: lunch};
-        const concatCarAdded = {...carloriesAdded,...optionsArray};
-         res.render('lunchYN', concatCarAdded); 
+router.get("/YN", async (req, res) => {
+  const chosen = req.query.options;
+  const name = req.query.name;
 
-    })
+  //bring updated userdata
+  const updatedinfo = await updatedUserData(chosen, name, "starbucks");
+  const userObj = { userData: updatedinfo };
+
+  const concatCarAdded = { ...userObj };
+  res.render("lunchYN", concatCarAdded);
 });
 
-router.get('/lists',(req,res)=>{
-    const optionsArray={lunch: lunch};
-    const concatCarAdded = {...carloriesAdded,...optionsArray};
+router.get("/lists", async (req, res) => {
 
-    if(req.query.options==='no'){
-        res.send("<script>alert('You forgot to bring your lunch box and your wallet.. No choice. Find and join any group for lunch'); location.href = '/lunch/lists?options=yes'</script>") 
-    }else if(req.query.options==="yes"){
-         res.render('lunch', concatCarAdded); 
-    }
+  const name = req.query.name;
+
+  //bring updated userdata
+  const updatedinfo = await bringUserdata(name);
+  const userObj = { userData: updatedinfo };
+
+  //bring list
+  const optionsArray = await bringListdata("lunch");
+  const optionsObj = { lunch: optionsArray };
+  const concatCarAdded = { ...userObj, ...optionsObj };
+
+  if (req.query.options === "no") {
+    res.send(
+      `<script>alert('You forgot to bring your lunch box and your wallet.. No choice. Find and join any group for lunch'); location.href=history.go(-1) </script>`
+    );
+  } else if (req.query.options === "yes") {
+    res.render("lunch", concatCarAdded);
+  }
 });
 
-
-module.exports=router;
+module.exports = router;

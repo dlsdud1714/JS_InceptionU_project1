@@ -73,9 +73,8 @@ const createExerciseLists = async (newData) => {
 };
 
 const findExerciseLists = async (when) => {
-  let findedLists = await exerciseList.find({ forwhat: `${when}` });
+  let findedLists = await exerciseList.find({forWhat: when });
   return findedLists;
 };
-
 
 module.exports = { createUser, findUser, updateUser, createFoodLists, findFoodLists, createExerciseLists, findExerciseLists };
